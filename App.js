@@ -1,11 +1,6 @@
-import { createStackNavigator } from 'react-navigation';
-import Main from './Components/Main'
-import Dashboard from './Components/Dashboard';
+import React from 'react';
+import boot from './src/boot/index';
 
-const App = createStackNavigator({
-  Home: { screen: Main },
-  Dashboard: { screen: Dashboard },
-});
+const app = boot();
 
-export default App;
-
+export default app;
