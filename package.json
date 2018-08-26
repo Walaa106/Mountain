@@ -9,19 +9,27 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
+    "jest": "node node_modules/jest/bin/jest.js",
     "prettier": "prettier --write ./src/**/*.{js,json}",
     "prettier-diff": "prettier --list-different ./src/**/*.{js,json}",
     "precommit": "lint-staged",
     "lint": "eslint src/"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|lottie-react-native|expo|react-native-maps|react-native-svg|react-native-branch|native-base-shoutem-theme|react-native-easy-grid|react-native-drawer|react-native-vector-icons|react-native-keyboard-aware-scroll-view|react-navigation|native-base|@expo|react-native-scrollable-tab-view|react-native-remote-svg)/)"
+    ]
   },
   "dependencies": {
-    "expo": "^27.0.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "expo": "^29.0.0",
     "native-base": "^2.7.2",
     "prop-types": "^15.6.2",
-    "react": "16.3.1",
+    "react": "^16.4.2",
     "react-native": "^0.55.4",
     "react-native-easy-toast": "^1.1.0",
     "react-native-elements": "^0.19.1",
@@ -36,22 +44,27 @@
     "remote-redux-devtools-on-debugger": "^0.8.0"
   },
   "devDependencies": {
-    "jest-expo": "~27.0.0",
-    "react-native-scripts": "^1.14.1",
-    "react-test-renderer": "16.3.1",
     "babel-eslint": "8.0.2",
     "babel-jest": "21.2.0",
+    "babel-plugin-dynamic-import-node": "^2.0.0",
     "babel-plugin-idx": "2.2.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-remove-console": "6.8.5",
-    "babel-preset-react-native": "4.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-native": "^4.0.0",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "4.10.0",
+    "eslint-config-prettier": "2.7.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-config-prettier": "2.7.0",
     "eslint-plugin-prettier": "2.3.1",
     "eslint-plugin-react": "7.4.0",
     "eslint-plugin-react-native": "3.1.0",
+    "jest-expo": "~27.0.0",
     "lint-staged": "4.3.0",
-    "prettier": "1.8.1"
+    "prettier": "1.8.1",
+    "react-native-scripts": "^1.14.1",
+    "react-test-renderer": "16.3.1"
   }
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Image from 'react-native-remote-svg';
+const React = require('react');
+const PropTypes = require('prop-types');
+const Image = require('react-native-remote-svg');
 
 const propTypes = {
   isWhite: PropTypes.bool,

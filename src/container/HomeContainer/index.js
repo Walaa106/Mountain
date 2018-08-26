@@ -1,7 +1,7 @@
-// @flow
-import * as React from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Home from '../../screens/Home';
+import Home from 'screens/Home';
 import datas from './data';
 import { fetchList } from './actions';
 
@@ -24,5 +24,10 @@ const mapStateToProps = state => ({
   data: state.homeReducer.list,
   isLoading: state.homeReducer.isLoading,
 });
+
+HomeContainer.PropTypes = {
+  navigation: PropTypes.object,
+  data: PropTypes.object,
+};
 
 export default connect(mapStateToProps, bindAction)(HomeContainer);

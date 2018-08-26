@@ -1,3 +1,3 @@
-export const WELCOME = 'Home';
-export const Login = 'Login';
-export const USER_PROFILE = 'Dashboard';
+export const HOME = 'Home';
+export const LOGIN = 'Login';
+export const Drawer = 'Drawer';

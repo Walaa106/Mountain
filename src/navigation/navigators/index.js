@@ -1,17 +1,31 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
-import WelcomeNavigator from './welcome';
 import * as screenNames from '../screen_names';
-import Splash from 'features/splash/containers';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
-const appNavigator = StackNavigator({
-  [screenNames.SPLASH]: {
-    screen: Splash,
-  },
+import Home from 'container/HomeContainer';
+import Login from 'container/LoginContainer';
+import Sidebar from 'container/SidebarContainer';
 
-  [screenNames.WELCOME]: {
-    screen: WelcomeNavigator,
+export const Drawer = createDrawerNavigator(
+  {
+    Home: { screen: Home },
   },
-});
+  {
+    initialRouteName: 'Home',
+    contentComponent: props => <Sidebar {...props} />,
+  }
+);
+
+const appNavigator = createStackNavigator(
+  {
+    Drawer: { screen: Drawer },
+    [screenNames.HOME]: { screen: Home },
+    [screenNames.LOGIN]: { screen: Login },
+  },
+  {
+    initialRouteName: 'Login',
+    headerMode: 'screen',
+  }
+);
 
 export default appNavigator;

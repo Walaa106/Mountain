@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 
 import configureStore from './configureStore';
 import App from '../App';
-import getTheme from '../theme/components';
-import variables from '../theme/variables/platform';
+import getTheme from 'theme/components';
+import variables from 'theme/variables/platform';
 
 export default class Setup extends React.Component {
   constructor() {

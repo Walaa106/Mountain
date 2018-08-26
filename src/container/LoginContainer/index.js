@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Item, Input, Icon, Toast, Form } from 'native-base';
 import { Field, reduxForm } from 'redux-form';
-import Login from '../../screens/Login';
+import Login from 'screens/Login';
 
 const required = value => (value ? undefined : 'Required');
 const maxLength = max => value =>
@@ -61,6 +62,18 @@ class LoginForm extends React.Component {
     );
   }
 }
+
+LoginForm.propTypes = {
+  email: PropTypes.string,
+  password: PropTypes.string,
+  navigation: PropTypes.object,
+};
+
+LoginForm.defaultProps = {
+  email: '',
+  password: '',
+  navigation: {},
+};
 
 const LoginContainer = reduxForm({
   form: 'login',

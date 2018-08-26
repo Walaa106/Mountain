@@ -2,7 +2,7 @@ import devTools from 'remote-redux-devtools';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 // import { persistStore } from 'redux-persist';
-import reducer from '../reducers';
+import reducer from 'reducers';
 
 export default function configureStore() {
   const enhancer = compose(
@@ -15,10 +15,3 @@ export default function configureStore() {
 
   return createStore(reducer, enhancer);
 }
-
-// export default function configureStore(onCompletion() => {
-// //   const store = createStore(reducer, enhancer);
-// //   persistStore(store, onCompletion);
-
-// //   return store;
-// }
